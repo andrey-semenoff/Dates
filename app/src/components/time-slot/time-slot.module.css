@@ -1,0 +1,24 @@
+.timeSlot {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+    padding: 5px;
+    background-color: #eee;
+    border: 1px solid #000;
+}
+
+.timeSlot:hover {
+    background-color: #ddd;
+    cursor: pointer;
+}
+
+.timeSlot.selected {
+    background-color: rgba(10,50,250, .4);
+}
+
+.timeSlot.disabled {
+    background-color: #ccc;
+    color: #aaa;
+    cursor: not-allowed;
+}

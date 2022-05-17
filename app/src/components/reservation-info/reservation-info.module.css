@@ -1,0 +1,18 @@
+.reservationInfo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 50px;
+    margin-top: calc(1vw);
+    border: 1px solid #000;
+    font-style: italic;
+}
+
+.timeSlot {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-style: normal;
+    font-weight: bold;
+}
