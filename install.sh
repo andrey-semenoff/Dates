@@ -19,7 +19,7 @@ printf "\n\n\U23F3 App installation...\n\n"
 cd $ROOT/app && eval "$pm install"
 
 printf "\n\n\U23F3 App building...\n\n"
-cd $ROOT/app && eval "$pm build"
+cd $ROOT/app && eval "$pm run build"
 
 printf "\n\n\U2705 Server & App are successfully installed, build and ready to run!"
 printf "\n\n\U1F3C1 To run server & app, please, perform \e[32m\"./start.sh\"\e[0m\n"
