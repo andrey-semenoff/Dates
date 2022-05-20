@@ -1,8 +1,8 @@
-type CompanyData<TimeSlotType extends string|number> = {
+type CompanyData = {
     id: number;
     name: string;
     type: string;
-    time_slots: TimeSlot<TimeSlotType>[];
+    time_slots: Omit<TimeSlot<string>, 'id'>[];
 }
 
 type Company = {
@@ -18,10 +18,8 @@ type TimeSlot<T extends string|number> = {
     end_time: T;
 }
 
-type TypeSlotSelected = {
-    id: number;
-    start_time: number;
-    end_time: number;
+type TypeSlotSelected = 
+    TimeSlot<number> & {
     company_id: number;
 }
 

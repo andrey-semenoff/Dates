@@ -13,12 +13,6 @@ async function fetchCompaniesData(): Promise<Company[] | ErrorCustom> {
         .catch(handleFetchCompaniesDataError);
 }
 
-async function fetchCompanyDataById(id: number): Promise<Company | null> {
-    return await window.fetch(`${COMPANY_API_BASE_URL}/companies/${id}`)
-        .then(response => response.json());
-}
-
 export const CompaniesApiProvider = {
     fetchCompaniesData,
-    fetchCompanyDataById
 };

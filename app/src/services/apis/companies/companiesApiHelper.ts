@@ -1,9 +1,9 @@
-import { CompanyData } from "models/company";
+import { Company, CompanyData } from "models/company";
 import { TimeSlot } from "models/company";
 import { convertTimeSlotFormat } from "helpers/date-helper";
 import { ErrorCustom, ErrorType } from "models/error";
 
-const filterCompaniesByType = (data: CompanyData<string>[]) => {
+const filterCompaniesByType = (data: CompanyData[]): CompanyData[] => {
     const filteredData = data.filter(c => c.type === 'company');
     if(!filteredData.length) {
         throw new Error('There is no companies yet.');
@@ -11,15 +11,15 @@ const filterCompaniesByType = (data: CompanyData<string>[]) => {
     return filteredData;
 }
 
-const convertCompaniesTimeSlots = (data: CompanyData<string>[]): CompanyData<number>[] => {
-    return data.map((companyData: CompanyData<string>): CompanyData<number> => ({
+const convertCompaniesTimeSlots = (data: CompanyData[]): Company[] => {
+    return data.map((companyData: CompanyData): Company => ({
         ...companyData,
         time_slots: companyData.time_slots.map(convertTimeSlotFormat)
     }))
 }
 
-const sortTimeSlots = (data: CompanyData<number>[]): CompanyData<number>[] => {
-    return data.map((company: CompanyData<number>) => {
+const sortTimeSlots = (data: Company[]): Company[] => {
+    return data.map((company: Company) => {
         company.time_slots.sort((a: TimeSlot<number>, b: TimeSlot<number>) => {
             if(a.start_time > b.start_time) {
                 return 1;

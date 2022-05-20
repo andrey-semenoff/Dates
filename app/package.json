@@ -46,6 +46,11 @@
       "last 1 safari version"
     ]
   },
+  "jest": {
+    "watchPathIgnorePatterns": [
+      "src/__tests__/mock_data"
+    ]
+  },
   "description": "Coding challenge",
   "main": "index.js",
   "repository": "repo-name.github.com",

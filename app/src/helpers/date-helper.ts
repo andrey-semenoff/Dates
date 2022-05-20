@@ -1,6 +1,6 @@
 import { TimeSlot } from "models/company";
 
-const convertTimeSlotFormat = (ts: TimeSlot<string>, id: number): TimeSlot<number> => {
+const convertTimeSlotFormat = (ts: Omit<TimeSlot<string>, 'id'>, id: number): TimeSlot<number> => {
     return {
         start_time: new Date(ts.start_time).getTime(),
         end_time: new Date(ts.end_time).getTime(),

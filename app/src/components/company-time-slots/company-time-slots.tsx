@@ -21,7 +21,7 @@ function CompanyTimeSlots({id, name, time_slots}: Company) {
         let index: number = 0;
         time_slots.forEach((ts: TimeSlot<number>, idx: number) => {
             const currDay = new Date(ts.start_time).getDay();
-            index = idx;
+            index = ts.id;
             if(prevDay === null || currDay === prevDay) {
                 timeSlotGroupSet.push(ts);
             } else {
@@ -30,7 +30,7 @@ function CompanyTimeSlots({id, name, time_slots}: Company) {
             }
             prevDay = currDay;
         });
-        timeSlotGroups.push(createTimeSlotGroup(timeSlotGroupSet, index));
+        timeSlotGroups.push(createTimeSlotGroup(timeSlotGroupSet, index + 1));
         return timeSlotGroups;
     }
 
