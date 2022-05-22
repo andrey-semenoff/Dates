@@ -6,9 +6,9 @@ import '@testing-library/jest-dom';
 import data from '__tests__/mock_data/db.json';
 
 beforeEach(() => {
-    global.fetch = jest.fn().mockImplementation((...args) =>{
+    global.fetch = jest.fn().mockImplementation(() => {
         return Promise.resolve({
-            json: () => Promise.resolve(data),
-        })}
-    )
-})
+            json: () => Promise.resolve(data)
+        });
+    });
+});

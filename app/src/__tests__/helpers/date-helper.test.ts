@@ -4,8 +4,8 @@ import { TimeSlot } from 'models/company';
 it('should convert ISO time string into UNIX timestamp', () => {
     const id = 1;
     const timeSlotString = {
-        "start_time": "2018-07-09T08:00:00.000+02:00",
-        "end_time": "2018-07-09T09:30:00.000+02:00"
+        start_time: '2018-07-09T08:00:00.000+02:00',
+        end_time: '2018-07-09T09:30:00.000+02:00'
     };
     const result: TimeSlot<number> = convertTimeSlotFormat(timeSlotString, id);
     expect(result).toEqual({

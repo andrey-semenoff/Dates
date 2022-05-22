@@ -1,9 +1,9 @@
-import { configureStore } from '@reduxjs/toolkit'
+import { configureStore } from '@reduxjs/toolkit';
 import timeSlotsSlice from 'store/features/timeSlots';
 
 const store = configureStore({
     reducer: {
-        timeSlots: timeSlotsSlice,
+        timeSlots: timeSlotsSlice
     }
 });
 
